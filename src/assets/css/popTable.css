@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+.popW {
+  width: 8rem;
+  height: 6rem;
+  padding: 0.15rem 0.4rem 0;
+}
+.popW::before,
+.popW::after {
+  position: absolute;
+  width: 1.4125rem;
+  height: 0.8rem;
+  background-size: 100% 100%;
+  content: "";
+}
+.popW::before {
+  top: 0;
+  left: 0;
+  background-image: url(../images/pan_lt.png);
+}
+.popW::after {
+  pointer-events: none;
+  top: 0;
+  right: 0;
+  background-image: url(../images/pan_rt.png);
+}
+.popW .pop-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.popW .pop-footer::before,
+.popW .pop-footer::after {
+  position: absolute;
+  width: 1.4125rem;
+  height: 0.8rem;
+  background-size: 100% 100%;
+  content: "";
+}
+.popW .pop-footer::before {
+  bottom: 0;
+  left: 0;
+  background-image: url(../images/pan_lb.png);
+}
+.popW .pop-footer::after {
+  bottom: 0;
+  right: 0;
+  background-image: url(../images/pan_rb.png);
+}
+.popW .pop-footer1 {
+  position: absolute;
+  top: 0.8rem;
+  left: 0;
+  width: 100%;
+}
+.popW .pop-footer1::before,
+.popW .pop-footer1::after {
+  position: absolute;
+  width: 0.125rem;
+  height: 4.4rem;
+  background-size: 100% 100%;
+  content: "";
+}
+.popW .pop-footer1::before {
+  top: 0;
+  left: 0;
+  background-image: url(../images/pan_l.png);
+}
+.popW .pop-footer1::after {
+  top: 0;
+  right: 0;
+  background-image: url(../images/pan_r.png);
+}
+.popW .pop-footer2 {
+  position: absolute;
+  top: 0;
+  left: 1.4125rem;
+  padding-right: 1.4125rem;
+  width: 4rem;
+}
+.popW .pop-footer2::before,
+.popW .pop-footer2::after {
+  position: absolute;
+  width: 5.175rem;
+  height: 0.2rem;
+  background-size: 100% 100%;
+  content: "";
+}
+.popW .pop-footer2::before {
+  top: 0;
+  left: 0;
+  background-image: url(../images/pan_t.png);
+}
+.popW .pop-footer2::after {
+  top: 5.8rem;
+  left: 0;
+  background-image: url(../images/pan_b.png);
+}
+.popW .popHead {
+  position: relative;
+  width: 100%;
+  height: 1.25rem;
+}
+.popW .popHead .closePopup {
+  position: absolute;
+  right: 0;
+  top: 0.1rem;
+  width: 0.26rem;
+  height: 0.26rem;
+  background-image: url(../images/cloce.png);
+  background-size: cover;
+}
+.popW .popHead .popTitle {
+  display: flex;
+  align-items: flex-end;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  font-size: 0.25rem;
+  font-weight: 100;
+  color: #fff;
+  text-align: left;
+}
+.popW .popHead .popTitle span {
+  background: url(../images/line1.png) no-repeat bottom right;
+  white-space: nowrap;
+  padding-right: 0.125rem;
+}
+.popW .popHead .popTitle p {
+  background: url(../images/line2.png) no-repeat bottom right;
+  width: 100%;
+  height: 0.1625rem;
+  margin-bottom: 0.0625rem;
+  opacity: 0.5;
+}
+.popW .popHead .popForm {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 0.65rem;
+}
+.popW .popHead .popForm form {
+  padding: 0.09rem 0 0.09rem 0.25rem;
+  height: 100%;
+}
+.popW .popHead .popForm p {
+  display: inline-block;
+  margin-left: 0.25rem;
+  height: 0.45rem;
+  line-height: 0.45rem;
+  font-size: 0.175rem;
+}
+.popW .popHead .popForm .popBorder {
+  height: 0.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), #060c21);
+  color: #fff;
+  font-size: 0.175rem;
+}
+.popW .popHead .popForm button {
+  margin-left: 0.25rem;
+  width: 1.25rem;
+}
+.popW .popTable {
+  width: 100%;
+  height: 3.75rem;
+  overflow-y: scroll;
+}
+.popW .popTable table {
+  width: 100%;
+  color: #fff;
+}
+.popW .popTable table tr {
+  width: 100%;
+  height: 0.4rem;
+  text-align: center;
+}
+.popW .popTable table tr:nth-of-type(even) {
+  background-color: rgba(101, 132, 226, 0.1);
+}

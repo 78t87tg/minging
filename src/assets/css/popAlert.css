@@ -1,0 +1,39 @@
+.popAlert {
+  width: 2.5rem;
+  height: 0.8rem;
+  border: 1px solid #ca3b55;
+  box-shadow: 0 0 10px #bc0d10 inset, 0 0 30px #b82b00;
+}
+.popAlert::before {
+  position: absolute;
+  left: 0.5rem;
+  bottom: -0.3rem;
+  width: 0.0125rem;
+  height: 0.3rem;
+  background-color: #ca3b55;
+  content: "";
+}
+.popAlert .popAlertHead {
+  position: relative;
+  height: 0.4rem;
+  width: 100%;
+  padding-left: 0.2rem;
+}
+.popAlert .popAlertHead p {
+  display: inline-block;
+  line-height: 0.5rem;
+  font-weight: 700;
+}
+.popAlert .popAlertBody {
+  position: relative;
+  width: 100%;
+  height: 0.6rem;
+}
+.popAlert .popAlertBody p {
+  width: 100%;
+  height: 0.39rem;
+  line-height: 0.3rem;
+  margin: 0;
+  padding-left: 0.2rem;
+  color: #fff;
+}

@@ -1,0 +1,436 @@
+@font-face {
+  font-family: electronicFont;
+  src: url(../fonts/DS-DIGIB.ttf) format('truetype');
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+* input {
+  padding-left: 0.06rem;
+}
+* li {
+  list-style: none;
+}
+.chartBoard {
+  margin: 0 auto;
+  background: no-repeat top center;
+  background-image: url(../images/bg4.png);
+  background-size: cover;
+  line-height: 1.15;
+  font-size: 0.15rem;
+}
+header {
+  position: relative;
+  height: 1.25rem;
+  background: url(../images/head_bg.png) no-repeat;
+  background-size: 100% 100%;
+}
+header h1 {
+  color: #fff;
+  text-align: center;
+  line-height: 1rem;
+  font-size: 0.475rem;
+}
+header .showTime {
+  position: absolute;
+  top: 0;
+  right: 0.375rem;
+  line-height: 0.9375rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.25rem;
+}
+.mainBox {
+  display: flex;
+  padding: 0.125rem 0.125rem 0;
+}
+.mainBox .col {
+  flex: 3;
+  position: relative;
+}
+.mainBox .col:nth-child(2) {
+  flex: 5;
+  margin: 0 0.125rem 0.1875rem;
+}
+.col .panel {
+  overflow: visible;
+  position: relative;
+  margin-bottom: 0.1875rem;
+  padding: 0.15rem 0.4rem 0;
+  height: 3.875rem;
+}
+.col .panel::before,
+.col .panel::after {
+  position: absolute;
+  width: 1.4125rem;
+  height: 0.8rem;
+  background-size: 100% 100%;
+  content: "";
+}
+.col .panel::before {
+  top: 0;
+  left: 0;
+  background-image: url(../images/pan_lt.png);
+}
+.col .panel::after {
+  pointer-events: none;
+  top: 0;
+  right: 0;
+  background-image: url(../images/pan_rt.png);
+}
+.col .panel .panel-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.col .panel .panel-footer::before,
+.col .panel .panel-footer::after {
+  position: absolute;
+  width: 1.4125rem;
+  height: 0.8rem;
+  background-size: 100% 100%;
+  content: "";
+}
+.col .panel .panel-footer::before {
+  bottom: 0;
+  left: 0;
+  background-image: url(../images/pan_lb.png);
+}
+.col .panel .panel-footer::after {
+  bottom: 0;
+  right: 0;
+  background-image: url(../images/pan_rb.png);
+}
+.col .panel .panel-footer1 {
+  position: absolute;
+  top: 0.8rem;
+  left: 0;
+  width: 100%;
+}
+.col .panel .panel-footer1::before,
+.col .panel .panel-footer1::after {
+  position: absolute;
+  width: 0.125rem;
+  height: 2.275rem;
+  background-size: 100% 100%;
+  content: "";
+}
+.col .panel .panel-footer1::before {
+  top: 0;
+  left: 0;
+  background-image: url(../images/pan_l.png);
+}
+.col .panel .panel-footer1::after {
+  top: 0;
+  right: 0;
+  background-image: url(../images/pan_r.png);
+}
+.col .panel .panel-footer2 {
+  position: absolute;
+  top: 0;
+  left: 1.4125rem;
+  padding-right: 1.4125rem;
+  width: 4rem;
+}
+.col .panel .panel-footer2::before,
+.col .panel .panel-footer2::after {
+  position: absolute;
+  width: 100%;
+  height: 0.2rem;
+  background-size: 100% 100%;
+  content: "";
+}
+.col .panel .panel-footer2::before {
+  top: 0;
+  left: 0;
+  background-image: url(../images/pan_t.png);
+}
+.col .panel .panel-footer2::after {
+  top: 3.675rem;
+  right: 0;
+  background-image: url(../images/pan_b.png);
+}
+.panelTitle {
+  display: flex;
+  align-items: flex-end;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  font-weight: 100;
+  color: #fff;
+  text-align: left;
+}
+.panelTitle span {
+  background: url(../images/line1.png) no-repeat bottom right;
+  white-space: nowrap;
+  padding-right: 0.125rem;
+  font-size: 0.25rem;
+}
+.panelTitle p {
+  background: url(../images/line2.png) no-repeat bottom right;
+  width: 100%;
+  height: 0.1625rem;
+  margin-bottom: 0.0625rem;
+  opacity: 0.5;
+}
+.col .panel .currentTask {
+  position: relative;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  height: 2.8rem;
+  background: url(../images/line.png) rgba(255, 255, 255, 0.02);
+}
+.col .panel .currentTask .currentTaskID {
+  position: relative;
+  margin: 0;
+  height: 0.5rem;
+  line-height: 0.6rem;
+  font-size: 0.2rem;
+  font-weight: 100;
+  color: #fff;
+}
+.col .panel .currentTask .currentTaskID p {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-weight: 100;
+  color: #fff;
+}
+.col .panel .currentTask .currentTaskID p:nth-child(2) {
+  right: 2rem;
+}
+.col .panel .currentTask .currentTaskInfo li {
+  height: 0.5rem;
+  line-height: 0.6rem;
+  font-size: 0.2rem;
+  color: #fff;
+}
+.col .panel .taskLog {
+  width: 100%;
+  height: 2.8rem;
+  background-color: rgba(101, 132, 226, 0.1);
+  overflow-y: scroll;
+}
+.col .panel .taskLog::-webkit-scrollbar {
+  width: 0.1rem;
+}
+.col .panel .taskLog::-webkit-scrollbar-track {
+  background: #073C76;
+  border-radius: 0.15rem;
+}
+.col .panel .taskLog::-webkit-scrollbar-thumb {
+  background: #2948c5;
+  border-radius: 0.15rem;
+}
+.col .panel .taskLog li {
+  color: rgba(255, 255, 255, 0.7);
+  height: 0.3rem;
+  line-height: 0.3rem;
+}
+.col .panel .tasklist {
+  height: 2.8rem;
+  overflow-y: scroll;
+  background: url(../images/line.png) rgba(255, 255, 255, 0.02);
+}
+.col .panel .tasklist::-webkit-scrollbar {
+  width: 0.1rem;
+}
+.col .panel .tasklist::-webkit-scrollbar-track {
+  background: #07234B;
+  border-radius: 0.15rem;
+}
+.col .panel .tasklist::-webkit-scrollbar-thumb {
+  background: #2948c5;
+  border-radius: 0.15rem;
+}
+.col .panel .tasklist table {
+  width: 100%;
+  color: #fff;
+}
+.col .panel .tasklist table tr {
+  height: 0.4rem;
+  text-align: center;
+  font-size: 0.1375rem;
+}
+.col .panel .tasklist table tr th {
+  font-size: 0.175rem;
+}
+.col .panel .tasklist table tr:nth-of-type(even) {
+  background-color: rgba(101, 132, 226, 0.1);
+}
+.col .panel .sysAlert {
+  height: 2.8rem;
+  color: #fff;
+  background: url(../images/line.png) rgba(255, 255, 255, 0.02);
+}
+.col .panel .sysAlert .alert {
+  position: relative;
+  display: inline-block;
+  margin-top: 0.3rem;
+  margin-left: 0.2rem;
+  width: 45%;
+  height: 1rem;
+}
+.col .panel .sysAlert .alert span {
+  display: inline-block;
+  height: 1rem;
+}
+.col .panel .sysAlert .alert .icon {
+  position: relative;
+  margin-right: 0.2rem;
+  width: 1rem;
+  border-radius: 50%;
+  border: 0.0125rem solid #47DDDF;
+  box-shadow: 0 0 0.125rem #0099b8 inset, 0 0 0.375rem #0099b8;
+  color: #6EDCB9;
+}
+.col .panel .sysAlert .alert .icon::before {
+  position: absolute;
+  top: 0.4875rem;
+  left: 0.4875rem;
+  margin: -0.15rem 0 0 -0.15rem;
+  font-size: 0.3rem;
+}
+.col .panel .sysAlert .alert .alertInfo {
+  position: relative;
+  width: 1.1rem;
+}
+.col .panel .sysAlert .alert .alertInfo h4,
+.col .panel .sysAlert .alert .alertInfo p {
+  margin: 0;
+  position: absolute;
+  color: #5FD1FD;
+}
+.col .panel .sysAlert .alert .alertInfo h4 {
+  top: 0.2rem;
+  font-size: 0.15rem;
+}
+.col .panel .sysAlert .alert .alertInfo p {
+  left: 0.45rem;
+  bottom: 0.1rem;
+  font-size: 0.35rem;
+  font-family: electronicFont;
+}
+.col .panel .sysAlert .alert .alertRed {
+  border: 0.0125rem solid #ca3b55;
+  box-shadow: 0 0 0.125rem #bc0d10 inset, 0 0 0.375rem #b82b00;
+  color: red;
+}
+.col .panel .train {
+  height: 2.8rem;
+  width: 100%;
+  overflow-y: scroll;
+  background: url(../images/line.png) rgba(255, 255, 255, 0.02);
+}
+.col .panel .train table {
+  width: 100%;
+  color: #fff;
+}
+.col .panel .train table tr {
+  height: 0.4rem;
+  text-align: center;
+  font-size: 0.175rem;
+}
+.col .panel .train table tr:nth-of-type(even) {
+  background-color: rgba(101, 132, 226, 0.1);
+}
+.col .panel .chart {
+  height: 2.8rem;
+  background: url(../images/line.png) rgba(255, 255, 255, 0.02);
+}
+.col .panel .videoPanelButton {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.4rem;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+}
+.col .map {
+  width: 100%;
+  height: 8rem;
+}
+.tempMap {
+  position: fixed;
+  top: 1.25rem;
+  left: 1.25rem;
+  width: 6.25rem;
+  height: 6.25rem;
+  background-color: #fff;
+}
+.col .midCtrl {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3.2rem;
+}
+.col .midCtrl .dashboard {
+  position: absolute;
+  bottom: 0.1rem;
+  left: 50%;
+  margin-left: -2rem;
+  width: 4rem;
+  height: 1.822rem;
+  background-image: url(../images/dashboard.png);
+  background-repeat: round;
+}
+.col .midCtrl .dashboard .directButton {
+  position: absolute;
+  width: 0.3rem;
+  height: 0.3rem;
+  background-color: transparent;
+  border: none;
+}
+.col .midCtrl .dashboard .funcButton {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0.65rem;
+  height: 0.3rem;
+  background-color: transparent;
+  border: none;
+}
+.col .midCtrl .dashboard .forward {
+  bottom: 0.65rem;
+  left: 50%;
+  margin-left: -1.6rem;
+}
+.col .midCtrl .dashboard .backward {
+  bottom: 0.65rem;
+  left: 50%;
+  margin-left: 1.3rem;
+}
+.col .midCtrl .dashboard .parking_or_unlocking {
+  top: 0.6rem;
+  left: 50%;
+  margin-left: -0.15rem;
+}
+.col .midCtrl .dashboard .horn_control {
+  margin-left: -1.725rem;
+}
+.col .midCtrl .dashboard .automatic_sanding {
+  margin-left: -1.025rem;
+}
+.col .midCtrl .dashboard .vehicle_emergency_stop {
+  margin-left: -0.325rem;
+}
+.popTrain {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -4rem;
+  margin-top: -3rem;
+  width: 8rem;
+  height: 6rem;
+  background-color: #074180;
+  color: #fff;
+}
+.popA {
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  top: -1.1rem;
+  background-color: #204583;
+  color: #fff;
+}

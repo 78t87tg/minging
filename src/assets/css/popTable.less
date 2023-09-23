@@ -1,0 +1,220 @@
+// 初始化
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+.popW {
+    width: 8rem;
+    height: 6rem;
+    padding: .15rem .4rem 0;
+
+    // 边框样式
+    &::before,
+    &::after {
+        position: absolute;
+        width: 1.4125rem;
+        height: .8rem;
+        background-size: 100% 100%;
+        content: "";
+    }
+
+    &::before {
+        top: 0;
+        left: 0;
+        background-image: url(../images/pan_lt.png);
+    }
+
+    &::after {
+        pointer-events: none;
+        top: 0;
+        right: 0;
+        background-image: url(../images/pan_rt.png);
+    }
+
+    .pop-footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+
+        &::before,
+        &::after {
+            position: absolute;
+            width: 1.4125rem;
+            height: .8rem;
+            background-size: 100% 100%;
+            content: "";
+        }
+
+        &::before {
+            bottom: 0;
+            left: 0;
+            background-image: url(../images/pan_lb.png);
+        }
+
+        &::after {
+            bottom: 0;
+            right: 0;
+            background-image: url(../images/pan_rb.png);
+        }
+    }
+
+    .pop-footer1 {
+        position: absolute;
+        top: .8rem;
+        left: 0;
+        width: 100%;
+
+        &::before,
+        &::after {
+            position: absolute;
+            width: .125rem;
+            height: 4.4rem;
+            background-size: 100% 100%;
+            content: "";
+        }
+
+        &::before {
+            top: 0;
+            left: 0;
+            background-image: url(../images/pan_l.png);
+        }
+
+        &::after {
+            top: 0;
+            right: 0;
+            background-image: url(../images/pan_r.png);
+        }
+    }
+
+    .pop-footer2 {
+        position: absolute;
+        top: 0;
+        left: 1.4125rem;
+        padding-right: 1.4125rem;
+        width: 4rem;
+
+        &::before,
+        &::after {
+            position: absolute;
+            width: 5.175rem;
+            height: .2rem;
+            background-size: 100% 100%;
+            content: "";
+        }
+
+        &::before {
+            top: 0;
+            left: 0;
+            background-image: url(../images/pan_t.png);
+        }
+
+        &::after {
+            top: 5.8rem;
+            left: 0;
+            background-image: url(../images/pan_b.png);
+        }
+    }
+
+    .popHead {
+        position: relative;
+        width: 100%;
+        height: 1.25rem;
+
+        .closePopup {
+            position: absolute;
+            right: 0;
+            top: .1rem;
+            width: .26rem;
+            height: .26rem;
+            background-image: url(../images/cloce.png);
+            background-size: cover;
+        }
+
+        .popTitle {
+            display: flex;
+            align-items: flex-end;
+            height: .6rem;
+            line-height: .6rem;
+            font-size: .25rem;
+            font-weight: 100;
+            color: #fff;
+            text-align: left;
+
+            span {
+                background: url(../images/line1.png) no-repeat bottom right;
+                white-space: nowrap;
+                padding-right: .125rem;
+            }
+
+            p {
+                background: url(../images/line2.png) no-repeat bottom right;
+                width: 100%;
+                height: .1625rem;
+                margin-bottom: .0625rem;
+                opacity: .5;
+            }
+        }
+
+        .popForm {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: .65rem;
+
+            form {
+                padding: .09rem 0 .09rem .25rem;
+                height: 100%;
+            }
+
+            p {
+                display: inline-block;
+                margin-left: .25rem;
+                height: .45rem;
+                line-height: .45rem;
+                font-size: .175rem;
+            }
+
+            .popBorder {
+                height: .45rem;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), #060c21);
+                color: #fff;
+                font-size: .175rem;
+            }
+
+            button {
+                margin-left: .25rem;
+                width: 1.25rem;
+            }
+        }
+    }
+
+    .popTable {
+        width: 100%;
+        height: 3.75rem;
+        // padding-bottom: 0.05rem;
+        overflow-y: scroll;
+
+        table {
+            width: 100%;
+            color: #fff;
+
+            tr {
+                width: 100%;
+                height: .4rem;
+                text-align: center;
+            }
+
+            tr:nth-of-type(even) {
+                background-color: rgba(101, 132, 226, .1);
+            }
+        }
+    }
+}
